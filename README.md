@@ -1,21 +1,22 @@
+# install
+
+install [cargo-wasi]
+
+```
+$ cargo install cargo-wasi
+```
+
 # build
 
 build wasm package
 
 ```bash
 cd crates/file
-wasm-pack build --target=nodejs
+cargo wasi build
 ```
 
 # run
 
 ```bash
-node bin/main.js
-```
-
-# encountered error
-
-```bash
-% node bin/main.js
-Err(Error { kind: Unsupported, message: "operation not supported on this platform" })
+node --experimental-wasi-unstable-preview1 bin/main.mjs
 ```
